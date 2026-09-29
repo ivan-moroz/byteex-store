@@ -1,0 +1,534 @@
+{
+  "products": [
+    {
+      "title": "White Robe",
+      "slug": "white-robe",
+      "category": "Robes",
+      "description": "Beautiful, comfortable loungewear for day or night.",
+      "heroHeading": "Don’t apologize for being comfortable.",
+      "heroImages": [
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        },
+        {
+          "asset": "95d52db6ad77aa71e6884a4fe0bb4641.webp",
+          "alternativeText": "Woman reading in white loungewear on a green sofa"
+        }
+      ],
+      "gallery": [
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        },
+        {
+          "asset": "f6ad497e9067a661ba70608b77509d55.webp",
+          "alternativeText": "Woman in a yellow printed lounge shirt"
+        },
+        {
+          "asset": "78749b820c96658edcb5fa07fead9932.webp",
+          "alternativeText": "Loungewear community portrait 1"
+        },
+        {
+          "asset": "1b752ba5d7d247bde2bde744d517271d.webp",
+          "alternativeText": "Loungewear community portrait 2"
+        },
+        {
+          "asset": "730825faeb38830e932b9d189276e3cc.webp",
+          "alternativeText": "Loungewear community portrait 3"
+        },
+        {
+          "asset": "bbb697bea1edef055ff2f4f8b9a3ec4f.webp",
+          "alternativeText": "Loungewear community portrait 4"
+        }
+      ],
+      "galleryCaption": "White Robe",
+      "sortOrder": 0
+    },
+    {
+      "title": "Everyday Lounge Set",
+      "slug": "everyday-lounge-set",
+      "category": "Lounge sets",
+      "description": "Made for living in. Soft essentials for your everyday.",
+      "heroHeading": "Your everyday, a little more comfortable.",
+      "heroImages": [
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        }
+      ],
+      "gallery": [
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        }
+      ],
+      "galleryCaption": "Everyday Lounge Set",
+      "sortOrder": 1
+    },
+    {
+      "title": "Sage Lounge Shirt",
+      "slug": "sage-lounge-shirt",
+      "category": "Shirts",
+      "description": "Easy layers for slow mornings and everything after.",
+      "heroHeading": "Comfort you can make yourself at home in.",
+      "heroImages": [
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        },
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        }
+      ],
+      "gallery": [
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        }
+      ],
+      "galleryCaption": "Sage Lounge Shirt",
+      "sortOrder": 2
+    },
+    {
+      "title": "Printed Lounge Shirt",
+      "slug": "printed-lounge-shirt",
+      "category": "Shirts",
+      "description": "A little color. A lot of comfort.",
+      "heroHeading": "Find something you love.",
+      "heroImages": [
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "f6ad497e9067a661ba70608b77509d55.webp",
+          "alternativeText": "Woman in a yellow printed lounge shirt"
+        },
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        }
+      ],
+      "gallery": [
+        {
+          "asset": "f6ad497e9067a661ba70608b77509d55.webp",
+          "alternativeText": "Woman in a yellow printed lounge shirt"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        }
+      ],
+      "galleryCaption": "Printed Lounge Shirt",
+      "sortOrder": 3
+    },
+    {
+      "title": "Soft Grey Robe",
+      "slug": "soft-grey-robe",
+      "category": "Robes",
+      "description": "An effortless layer for quiet moments.",
+      "heroHeading": "Be your best self.",
+      "heroImages": [
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        },
+        {
+          "asset": "730825faeb38830e932b9d189276e3cc.webp",
+          "alternativeText": "Loungewear community portrait 3"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        }
+      ],
+      "gallery": [
+        {
+          "asset": "730825faeb38830e932b9d189276e3cc.webp",
+          "alternativeText": "Loungewear community portrait 3"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        }
+      ],
+      "galleryCaption": "Soft Grey Robe",
+      "sortOrder": 4
+    },
+    {
+      "title": "Everyday Slip",
+      "slug": "everyday-slip",
+      "category": "Sleepwear",
+      "description": "Light, simple and unimaginably comfortable.",
+      "heroHeading": "Comfort, from morning to night.",
+      "heroImages": [
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        },
+        {
+          "asset": "975691a855bcad18e10a68284c7a65d1.webp",
+          "alternativeText": "Loungewear community portrait 9"
+        },
+        {
+          "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+          "alternativeText": "Woman stretching in a sage lounge shirt"
+        }
+      ],
+      "gallery": [
+        {
+          "asset": "975691a855bcad18e10a68284c7a65d1.webp",
+          "alternativeText": "Loungewear community portrait 9"
+        },
+        {
+          "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+          "alternativeText": "Woman relaxing in a white robe"
+        },
+        {
+          "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+          "alternativeText": "Woman wearing a light lounge top and shorts"
+        }
+      ],
+      "galleryCaption": "Everyday Slip",
+      "sortOrder": 5
+    }
+  ],
+  "storefront": {
+    "brandName": "BYTEEX",
+    "announcement": "CONSCIOUSLY MADE BUTTER SOFT STAPLES FOR EVERY DAY (OR NIGHT)  |  FREE SHIPPING on orders > $200  |  easy 45 day return window.",
+    "mobileAnnouncement": "FREE SHIPPING on orders > $200",
+    "catalogLinkLabel": "Shop the collection",
+    "catalogHeading": "Find your kind of comfortable.",
+    "catalogDescription": "Consciously made, butter-soft staples for every day (or night).",
+    "allCategoryLabel": "All pieces",
+    "viewProductLabel": "Discover",
+    "emptyCatalogMessage": "No pieces in this collection yet.",
+    "ctaLabel": "Customize Your Outfit",
+    "ctaHref": "/products",
+    "reviewLabel": "Over 500+ 5 Star Reviews Online",
+    "pressLabel": "as seen in",
+    "heroBenefits": [
+      {
+        "title": "Beautiful, comfortable loungewear for day or night.",
+        "description": "",
+        "icon": "sun"
+      },
+      {
+        "title": "No wasteful extras, like tags or plastic packaging.",
+        "description": "",
+        "icon": "cart"
+      },
+      {
+        "title": "Our signature fabric is incredibly comfortable — unlike anything you’ve ever felt.",
+        "description": "",
+        "icon": "waves"
+      }
+    ],
+    "heroReview": {
+      "name": "Amy P.",
+      "rating": 5,
+      "text": "Overjoyed with my Loungewear set. I have the jogger and the sweatshirt. Quality product on every level. From the compostable packaging, to the supplied washing bag, even the garments smell like fresh herbs when I first held them.",
+      "avatar": {
+        "asset": "7abb62cf1fd4f1d7b8c4ba22c6b318b1.webp",
+        "alternativeText": "Loungewear community portrait 8"
+      }
+    },
+    "press": [
+      {
+        "name": "ECO-STYLIST",
+        "image": {
+          "asset": "d2632da1441dc9417ed22e212377a050.webp",
+          "alternativeText": "ECO-STYLIST"
+        }
+      },
+      {
+        "name": "JILLIAN HARRIS",
+        "image": {
+          "asset": "79e6df088d6c3e51fed79d96046fae99.webp",
+          "alternativeText": "Jillian Harris"
+        }
+      },
+      {
+        "name": "THE ECO HUB",
+        "image": {
+          "asset": "a20fcdebf3bae85fa3d2fcd6c3438916.webp",
+          "alternativeText": "The Eco Hub"
+        }
+      },
+      {
+        "name": "TRENDHUNTER",
+        "image": {
+          "asset": "a3a76024def33034269de694e3047f0a.webp",
+          "alternativeText": "Trendhunter"
+        }
+      }
+    ],
+    "benefitsHeading": "Loungewear you can be proud of.",
+    "benefits": [
+      {
+        "title": "Ethically sourced.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "icon": "cart"
+      },
+      {
+        "title": "Responsibly made.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "icon": "leaf"
+      },
+      {
+        "title": "Made for living in.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "icon": "sun"
+      },
+      {
+        "title": "Unimaginably comfortable.",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "icon": "waves"
+      }
+    ],
+    "storyHeading": "Be your best self.",
+    "storyImages": [
+      {
+        "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+        "alternativeText": "Woman wearing a light lounge top and shorts"
+      },
+      {
+        "asset": "fb8cad71007a3346559435c18c6d4cc3.webp",
+        "alternativeText": "Woman relaxing in a white robe"
+      },
+      {
+        "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+        "alternativeText": "Woman stretching in a sage lounge shirt"
+      }
+    ],
+    "storyBody": "Hi! My name’s [Insert Name], and I founded [Insert] in _____.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.\n\nFusce non nibh luctus, dignissim risus quis, bibendum dolor. Donec placerat volutpat ligula, ac consectetur felis varius non. Aliquam a nunc rutrum, porttitor dolor eu, pellentesque est. Vivamus id arcu congue, faucibus libero nec, placerat ligula.\n\nOrci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed eu nisl a metus ultrices sodales.\n\nFusce non ante velit. Sed auctor odio eu semper molestie. Nam mattis, sapien eget lobortis fringilla, eros ipsum tristique tellus, ac convallis urna massa at nibh.\n\nDuis non fermentum augue. Vivamus laoreet aliquam risus, sed euismod leo aliquam ut. Vivamus in felis eu lacus feugiat aliquam nec in sapien.\n\nCras mattis varius mollis.",
+    "processHeading": "Comfort made easy",
+    "steps": [
+      {
+        "title": "You save.",
+        "description": "Browse our comfort sets and save 15% when you bundle.",
+        "icon": "cart"
+      },
+      {
+        "title": "We ship.",
+        "description": "We ship your items within 1–2 days of receiving your order.",
+        "icon": "truck"
+      },
+      {
+        "title": "You enjoy!",
+        "description": "Wear honest around the house, out on the town, or in bed.",
+        "icon": "sun"
+      }
+    ],
+    "reviewsHeading": "What are our fans saying?",
+    "reviewsDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. Fusce non nibh luctus.",
+    "communityImages": [
+      {
+        "asset": "78749b820c96658edcb5fa07fead9932.webp",
+        "alternativeText": "Loungewear community portrait 1"
+      },
+      {
+        "asset": "1b752ba5d7d247bde2bde744d517271d.webp",
+        "alternativeText": "Loungewear community portrait 2"
+      },
+      {
+        "asset": "730825faeb38830e932b9d189276e3cc.webp",
+        "alternativeText": "Loungewear community portrait 3"
+      },
+      {
+        "asset": "bbb697bea1edef055ff2f4f8b9a3ec4f.webp",
+        "alternativeText": "Loungewear community portrait 4"
+      },
+      {
+        "asset": "895725d634837c4f589e6e761b0796eb.webp",
+        "alternativeText": "Loungewear community portrait 5"
+      },
+      {
+        "asset": "f3f1c5674d8b9994fe79b42f88695bdd.webp",
+        "alternativeText": "Loungewear community portrait 6"
+      },
+      {
+        "asset": "f6ad497e9067a661ba70608b77509d55.webp",
+        "alternativeText": "Loungewear community portrait 7"
+      },
+      {
+        "asset": "7abb62cf1fd4f1d7b8c4ba22c6b318b1.webp",
+        "alternativeText": "Loungewear community portrait 8"
+      },
+      {
+        "asset": "975691a855bcad18e10a68284c7a65d1.webp",
+        "alternativeText": "Loungewear community portrait 9"
+      },
+      {
+        "asset": "a7b12a793f0f11b07cc06f98d5cb6792.webp",
+        "alternativeText": "Loungewear community portrait 10"
+      },
+      {
+        "asset": "ad79c3124248a491db39837c0cbb2595.webp",
+        "alternativeText": "Loungewear community portrait 11"
+      },
+      {
+        "asset": "28c84281c62badaef1b60b589a477841.webp",
+        "alternativeText": "Loungewear community portrait 12"
+      }
+    ],
+    "testimonials": [
+      {
+        "name": "Jane, S.",
+        "rating": 5,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "avatar": {
+          "asset": "78749b820c96658edcb5fa07fead9932.webp",
+          "alternativeText": "Loungewear community portrait 1"
+        }
+      },
+      {
+        "name": "Jane, S.",
+        "rating": 5,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "avatar": {
+          "asset": "1b752ba5d7d247bde2bde744d517271d.webp",
+          "alternativeText": "Loungewear community portrait 2"
+        }
+      },
+      {
+        "name": "Jane, S.",
+        "rating": 5,
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+        "avatar": {
+          "asset": "730825faeb38830e932b9d189276e3cc.webp",
+          "alternativeText": "Loungewear community portrait 3"
+        }
+      }
+    ],
+    "faqHeading": "Frequently asked questions.",
+    "faqs": [
+      {
+        "question": "lorem ipsum dolor sit amet",
+        "answer": "Our fabrics and garments are made in Portugal. We build strong relationships with our immediate suppliers and visit as often as possible."
+      },
+      {
+        "question": "lorem ipsum dolor sit amet",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat."
+      },
+      {
+        "question": "lorem ipsum dolor sit amet",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat."
+      },
+      {
+        "question": "lorem ipsum dolor sit amet",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat."
+      },
+      {
+        "question": "lorem ipsum dolor sit amet",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat."
+      },
+      {
+        "question": "lorem ipsum dolor sit amet",
+        "answer": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat."
+      }
+    ],
+    "faqImages": [
+      {
+        "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+        "alternativeText": "Woman stretching in a sage lounge shirt"
+      },
+      {
+        "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+        "alternativeText": "Woman wearing a light lounge top and shorts"
+      },
+      {
+        "asset": "95d52db6ad77aa71e6884a4fe0bb4641.webp",
+        "alternativeText": "Woman reading in white loungewear on a green sofa"
+      }
+    ],
+    "impactHeading": "Our total green impact",
+    "impact": [
+      {
+        "value": "3,927 kg",
+        "label": "of CO2 saved",
+        "icon": "cloud",
+        "showOnMobile": true
+      },
+      {
+        "value": "2,546,167 days",
+        "label": "of drinking water saved",
+        "icon": "water",
+        "showOnMobile": true
+      },
+      {
+        "value": "7,321 kWh",
+        "label": "of energy saved",
+        "icon": "bolt",
+        "showOnMobile": false
+      }
+    ],
+    "finalHeading": "Find something you love.",
+    "finalDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis sapien facilisis tincidunt pellentesque. In eget ipsum et felis finibus consequat.",
+    "finalMobileDescription": "Click below to browse our collection!",
+    "finalImages": [
+      {
+        "asset": "4da6140c6a6088bf977982c8ad1b6608.webp",
+        "alternativeText": "Woman stretching in a sage lounge shirt"
+      },
+      {
+        "asset": "f6ad497e9067a661ba70608b77509d55.webp",
+        "alternativeText": "Woman in a yellow printed lounge shirt"
+      },
+      {
+        "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
+        "alternativeText": "Woman wearing a light lounge top and shorts"
+      }
+    ]
+  }
+}
