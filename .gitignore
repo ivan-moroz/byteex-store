@@ -9,6 +9,8 @@ build/
 *.tsbuildinfo
 cms/.cache/
 cms/.tmp/
+cms/.strapi/
+cms/.strapi-updater.json
 cms/public/uploads/*
 !cms/public/uploads/.gitkeep
 .local/

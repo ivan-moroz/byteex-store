@@ -4,6 +4,7 @@ Source: Byteex – Standard Development Test, desktop 1:1166, mobile 1:1633.
 Inspected in Figma's guest viewer on 2026-09-29 before implementation.
 
 ## Observed layout
+
 - Desktop: approximately 1440px-wide long landing page; mobile approximately 428px.
 - Slim cream announcement, black BYTEEX wordmark. Desktop logo left; mobile centered.
 - Hero: two columns; navy heading and three small icon benefits on left; three portrait photos with cream backdrop on right. CTA and overlapping white review card below.
@@ -19,4 +20,7 @@ Inspected in Figma's guest viewer on 2026-09-29 before implementation.
 - No price selector or checkout is visible in these supplied landing-page frames. CTAs link to the requested product listing; no invented checkout is added.
 
 ## Fidelity limits
+
 Guest viewing exposes layers and rendered canvas, but exact typography, color values, variables and export controls require authenticated inspection. Initial sizes/colors are estimates from the rendered frames, not claimed exact Figma values. Figma photos are downloaded from observed signed asset URLs; no stock substitutes are used. Font match and vector icons need final confirmation against authenticated Figma inspection.
+
+The current seed contains four identified press logos (Canadian Living is not included), twelve community photos in a desktop row, and a sage-shirt portrait in the story collage instead of the window portrait. These secondary content differences remain; editors can replace and extend the media through Storefront. Browser checks cover Chromium at 375, 428, 768 and 1440px, not Safari or Firefox.
