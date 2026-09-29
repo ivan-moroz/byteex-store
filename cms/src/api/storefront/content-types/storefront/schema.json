@@ -1,0 +1,190 @@
+{
+  "kind": "singleType",
+  "collectionName": "storefronts",
+  "info": {
+    "singularName": "storefront",
+    "pluralName": "storefronts",
+    "displayName": "Storefront"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "brandName": {
+      "type": "string",
+      "required": true
+    },
+    "announcement": {
+      "type": "text",
+      "required": true
+    },
+    "mobileAnnouncement": {
+      "type": "string",
+      "required": true
+    },
+    "catalogLinkLabel": {
+      "type": "string",
+      "required": true
+    },
+    "catalogHeading": {
+      "type": "string",
+      "required": true
+    },
+    "catalogDescription": {
+      "type": "text",
+      "required": true
+    },
+    "allCategoryLabel": {
+      "type": "string",
+      "required": true
+    },
+    "viewProductLabel": {
+      "type": "string",
+      "required": true
+    },
+    "emptyCatalogMessage": {
+      "type": "string",
+      "required": true
+    },
+    "ctaLabel": {
+      "type": "string",
+      "required": true
+    },
+    "ctaHref": {
+      "type": "string",
+      "required": true
+    },
+    "reviewLabel": {
+      "type": "string",
+      "required": true
+    },
+    "pressLabel": {
+      "type": "string",
+      "required": true
+    },
+    "benefitsHeading": {
+      "type": "string",
+      "required": true
+    },
+    "storyHeading": {
+      "type": "string",
+      "required": true
+    },
+    "storyBody": {
+      "type": "text",
+      "required": true
+    },
+    "processHeading": {
+      "type": "string",
+      "required": true
+    },
+    "reviewsHeading": {
+      "type": "string",
+      "required": true
+    },
+    "reviewsDescription": {
+      "type": "text",
+      "required": true
+    },
+    "faqHeading": {
+      "type": "string",
+      "required": true
+    },
+    "impactHeading": {
+      "type": "string",
+      "required": true
+    },
+    "finalHeading": {
+      "type": "string",
+      "required": true
+    },
+    "finalDescription": {
+      "type": "text",
+      "required": true
+    },
+    "finalMobileDescription": {
+      "type": "text",
+      "required": true
+    },
+    "heroBenefits": {
+      "type": "component",
+      "component": "content.item",
+      "repeatable": true,
+      "required": true
+    },
+    "heroReview": {
+      "type": "component",
+      "component": "content.quote",
+      "repeatable": false,
+      "required": true
+    },
+    "press": {
+      "type": "component",
+      "component": "content.press",
+      "repeatable": true,
+      "required": true
+    },
+    "benefits": {
+      "type": "component",
+      "component": "content.item",
+      "repeatable": true,
+      "required": true
+    },
+    "storyImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    },
+    "steps": {
+      "type": "component",
+      "component": "content.item",
+      "repeatable": true,
+      "required": true
+    },
+    "communityImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    },
+    "testimonials": {
+      "type": "component",
+      "component": "content.quote",
+      "repeatable": true,
+      "required": true
+    },
+    "faqs": {
+      "type": "component",
+      "component": "content.faq",
+      "repeatable": true,
+      "required": true
+    },
+    "faqImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    },
+    "impact": {
+      "type": "component",
+      "component": "content.impact",
+      "repeatable": true,
+      "required": true
+    },
+    "finalImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "byteex-store", "version": "1.0.0", "private": true,
+  "scripts": {"dev": "next dev --hostname 127.0.0.1", "build": "next build", "start": "next start --hostname 127.0.0.1", "typecheck": "tsc --noEmit", "lint": "eslint .", "test": "node --test tests/*.test.mjs"},
+  "dependencies": {"next": "^16.2.1", "react": "^19.2.4", "react-dom": "^19.2.4", "sass": "^1.97.3", "server-only": "^0.0.1", "zod": "^4.3.6"},
+  "devDependencies": {"@types/node": "^24.0.0", "@types/react": "^19.2.0", "@types/react-dom": "^19.2.0", "typescript": "^5.9.3", "eslint": "^9.39.0", "eslint-config-next": "^16.2.1"},
+  "engines": {"node": ">=22.0.0 <25"}, "packageManager": "pnpm@10.32.1"
+}
