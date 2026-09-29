@@ -4,6 +4,7 @@ import { MediaImage } from './MediaImage';
 import { Icon } from './Icon';
 import { ProductGallery } from './ProductGallery';
 import { Carousel } from './Carousel';
+import { PressGallery } from './PressGallery';
 import s from './Storefront.module.scss';
 export function ProductLanding({ product, content }: { product: Product; content: Storefront }) {
   return (
@@ -33,15 +34,7 @@ export function ProductLanding({ product, content }: { product: Product; content
         <section className={s.press} aria-label={content.pressLabel}>
           <div className={s.container}>
             <p>{content.pressLabel}</p>
-            <div className={s.pressLogos}>
-              {content.press.map((press) => (
-                <MediaImage
-                  key={press.name}
-                  media={press.image}
-                  sizes="(max-width:700px) 120px, 190px"
-                />
-              ))}
-            </div>
+            <PressGallery items={content.press} label={content.pressLabel} />
           </div>
         </section>
         <section className={`${s.container} ${s.benefits}`} aria-labelledby="benefits-heading">

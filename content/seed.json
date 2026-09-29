@@ -289,28 +289,32 @@
         "image": {
           "asset": "d2632da1441dc9417ed22e212377a050.webp",
           "alternativeText": "ECO-STYLIST"
-        }
+        },
+        "url": "https://www.eco-stylist.com/"
       },
       {
         "name": "JILLIAN HARRIS",
         "image": {
           "asset": "79e6df088d6c3e51fed79d96046fae99.webp",
           "alternativeText": "Jillian Harris"
-        }
+        },
+        "url": "https://jillianharris.com/"
       },
       {
         "name": "THE ECO HUB",
         "image": {
           "asset": "a20fcdebf3bae85fa3d2fcd6c3438916.webp",
           "alternativeText": "The Eco Hub"
-        }
+        },
+        "url": "https://theecohub.com/"
       },
       {
         "name": "TRENDHUNTER",
         "image": {
           "asset": "a3a76024def33034269de694e3047f0a.webp",
           "alternativeText": "Trendhunter"
-        }
+        },
+        "url": "https://www.trendhunter.com/"
       }
     ],
     "benefitsHeading": "Loungewear you can be proud of.",

@@ -16,6 +16,18 @@ const quoteSchema = z.object({
   rating: z.number().min(1).max(5),
   avatar: imageSchema,
 });
+// Legacy entries without destinations remain visible; unsafe schemes never become links.
+export const pressSchema = z.object({
+  name: z.string(),
+  image: imageSchema,
+  url: z
+    .string()
+    .trim()
+    .url()
+    .refine((value) => /^https?:\/\//i.test(value))
+    .nullish()
+    .catch(null),
+});
 export const productSchema = z.object({
   title: z.string(),
   slug: z.string(),
@@ -54,7 +66,7 @@ export const storefrontSchema = z.object({
   finalMobileDescription: z.string(),
   heroBenefits: z.array(itemSchema),
   heroReview: quoteSchema,
-  press: z.array(z.object({ name: z.string(), image: imageSchema })),
+  press: z.array(pressSchema),
   benefits: z.array(itemSchema),
   storyImages: z.array(imageSchema).min(3),
   steps: z.array(itemSchema),

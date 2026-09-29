@@ -41,7 +41,11 @@ const components = {
     icon: { type: 'enumeration', enum: ['cloud', 'water', 'bolt'], required: true },
     showOnMobile: { type: 'boolean', default: true },
   },
-  press: { name: str(), image: media() },
+  press: {
+    name: str(),
+    image: media(),
+    url: { ...str(), regex: '^https?://[^\\s/]+(?:[/?#][^\\s]*)?$' },
+  },
 };
 for (const [name, attributes] of Object.entries(components))
   await write(`cms/src/components/content/${name}.json`, {
