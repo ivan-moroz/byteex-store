@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_content_items",
+  "info": {
+    "displayName": "item"
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": false
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "sun",
+        "leaf",
+        "waves",
+        "cart",
+        "truck",
+        "cloud",
+        "water",
+        "bolt"
+      ],
+      "default": "leaf",
+      "required": true
+    }
+  }
+}

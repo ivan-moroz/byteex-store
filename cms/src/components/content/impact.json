@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_content_impacts",
+  "info": {
+    "displayName": "impact"
+  },
+  "attributes": {
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "cloud",
+        "water",
+        "bolt"
+      ],
+      "required": true
+    },
+    "showOnMobile": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
