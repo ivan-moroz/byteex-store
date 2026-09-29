@@ -30,6 +30,8 @@ The setup script creates `.env.local` and `cms/.env`, fills missing settings fro
 
 This is a repository with two independently installed applications, not a shared dependency workspace. The root is Next.js; `cms/` is Strapi. Run each application's commands in its own directory.
 
+The CMS pins `pg` to `8.16.3` for compatibility with Strapi's Knex 3.0.1 transaction queries. Newer `pg` versions such as 8.23.0 warn about the concurrent queries that this Knex/Strapi combination queues on a single connection. This pin is a compatibility workaround, not a change to Strapi's query scheduling; revisit it when upgrading Strapi/Knex. After dependency changes, restart `pnpm develop` so the process loads the installed driver.
+
 ## 2. Configure PostgreSQL
 
 Use a dedicated database. If `byteex_store` already exists, configure its existing user and password; do not recreate it. Otherwise, as a PostgreSQL administrator:
