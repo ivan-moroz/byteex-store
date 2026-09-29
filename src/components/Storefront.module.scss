@@ -762,6 +762,83 @@ $muted: #676767;
     margin: auto;
   }
 }
+.purchaseAssurance {
+  max-width: 1000px;
+  margin: 28px auto 0;
+  color: $muted;
+}
+.paymentRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+}
+.shippingNotice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #00b728;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+  white-space: nowrap;
+}
+.paymentMethods {
+  list-style: none;
+  padding: 0 0 0 22px;
+  margin: 0;
+  border-left: 2px solid #e8e5e1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 26px;
+  img {
+    width: 28px;
+    height: 18px;
+    object-fit: contain;
+  }
+}
+.purchaseBenefits {
+  list-style: none;
+  padding: 0;
+  margin: 25px 0 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  li {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 10px 30px;
+    font-size: 21px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    white-space: pre-line;
+    &:not(:first-child) {
+      border-left: 2px solid #e8e5e1;
+    }
+  }
+}
+.assuranceIcon {
+  flex: 0 0 52px;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #ece9e4;
+}
+@media (min-width: 701px) and (max-width: 1100px) {
+  .purchaseBenefits li {
+    padding-inline: 16px;
+    gap: 14px;
+    font-size: 17px;
+  }
+}
+@media (max-width: 700px) {
+  .purchaseAssurance {
+    display: none;
+  }
+}
 .mobileOnly {
   display: none;
 }

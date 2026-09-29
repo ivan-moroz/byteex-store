@@ -533,6 +533,61 @@
         "asset": "8bfea159c93b0287700e09d2e4826ce0.webp",
         "alternativeText": "Woman wearing a light lounge top and shorts"
       }
-    ]
+    ],
+    "purchaseAssurance": {
+      "shippingNotice": "Ships in 1-2 Days",
+      "paymentMethods": [
+        {
+          "name": "American Express",
+          "imageUrl": "/payments/american_express.svg"
+        },
+        {
+          "name": "Apple Pay",
+          "imageUrl": "/payments/apple_pay.svg"
+        },
+        {
+          "name": "Diners Club",
+          "imageUrl": "/payments/diners_club.svg"
+        },
+        {
+          "name": "Discover",
+          "imageUrl": "/payments/discover.svg"
+        },
+        {
+          "name": "Google Pay",
+          "imageUrl": "/payments/google_pay.svg"
+        },
+        {
+          "name": "Mastercard",
+          "imageUrl": "/payments/master.svg"
+        },
+        {
+          "name": "PayPal",
+          "imageUrl": "/payments/paypal.svg"
+        },
+        {
+          "name": "Shop Pay",
+          "imageUrl": "/payments/shopify_pay.svg"
+        },
+        {
+          "name": "Visa",
+          "imageUrl": "/payments/visa.svg"
+        }
+      ],
+      "benefits": [
+        {
+          "text": "FREE Shipping on\nOrders over $200",
+          "icon": "truck"
+        },
+        {
+          "text": "Over 500+ 5 Star\nReviews Online",
+          "icon": "shield"
+        },
+        {
+          "text": "Made ethically\nand responsibly.",
+          "icon": "cart"
+        }
+      ]
+    }
   }
 }

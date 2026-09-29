@@ -220,6 +220,10 @@ For deployment, provide production environment variables, a persistent PostgreSQ
 
 ## Troubleshooting
 
+The desktop-only shipping/payment assurance strip is configured in **Storefront → purchaseAssurance** (JSON): `shippingNotice`, `paymentMethods` (`name`, `imageUrl`), and `benefits` (`text`, `icon`: `truck`, `shield`, or `cart`). Use `\n` for intentional line breaks. Image URLs can reference bundled `/payments/` assets or your configured Strapi media URLs. Publish changes as usual. The strip is hidden at 700px and below. Existing databases can initialize only this missing field with `node scripts/backfill-purchase-assurance.cjs` from `cms/` after rebuilding/restarting Strapi; existing values and other draft/published content are preserved.
+
+Payment SVGs come from [ActiveMerchant payment_icons](https://github.com/activemerchant/payment_icons) with the license included in `public/payments/MIT-LICENSE`. They are display assets; the project does not implement payment processing.
+
 Press logos are managed in **Content Manager → Storefront → press**. Each entry has a name, image and required absolute `http://` or `https://` URL. Publish the entry after editing. Links open in a new tab; centered navigation dots appear only when the logo strip overflows its available width and are recalculated on resize; the active dot is black and other dots are light gray. Swipe, trackpad scrolling and keyboard access to links remain available.
 
 For an existing database, restart Strapi to load the new `content.press.url` field, then run `node scripts/backfill-press-urls.cjs` from `cms/`. It fills only missing URLs for recognized seed logos in existing draft/published component rows, without publishing other draft changes or overwriting configured destinations. Set URLs manually for custom logos. Legacy entries with missing/invalid URLs remain visible without a clickable link.
