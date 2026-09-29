@@ -8,7 +8,7 @@ import s from './Storefront.module.scss';
 export function PressGallery({ items, label }: { items: Storefront['press']; label: string }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const trackId = useId();
-  const [navigation, setNavigation] = useState({ overflow: false, previous: false, next: false });
+  const [navigation, setNavigation] = useState({ stops: [0], active: 0 });
 
   useEffect(() => {
     const track = trackRef.current;
@@ -17,15 +17,29 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
     const measure = () => {
       const maximum = Math.max(0, track.scrollWidth - track.clientWidth);
       const position = Math.max(0, Math.min(track.scrollLeft, maximum));
-      const next = {
-        overflow: maximum > 1,
-        previous: position > 1,
-        next: maximum - position > 1,
-      };
+      const stops = [0];
+      if (maximum > 1) {
+        const padding = parseFloat(getComputedStyle(track).paddingLeft) || 0;
+        const left = track.getBoundingClientRect().left;
+        for (const child of track.children) {
+          const offset = Math.min(
+            maximum,
+            Math.max(0, child.getBoundingClientRect().left - left + track.scrollLeft - padding),
+          );
+          if (offset - stops[stops.length - 1] > 1) stops.push(offset);
+        }
+        if (maximum - stops[stops.length - 1] > 1) stops.push(maximum);
+      }
+      const active = stops.reduce(
+        (nearest, offset, index) =>
+          Math.abs(offset - position) < Math.abs(stops[nearest] - position) ? index : nearest,
+        0,
+      );
+      const next = { stops, active };
       setNavigation((current) =>
-        current.overflow === next.overflow &&
-        current.previous === next.previous &&
-        current.next === next.next
+        current.active === active &&
+        current.stops.length === stops.length &&
+        current.stops.every((offset, index) => offset === stops[index])
           ? current
           : next,
       );
@@ -48,11 +62,11 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
     };
   }, [items]);
 
-  function move(direction: number) {
+  function goTo(index: number) {
     const track = trackRef.current;
     if (!track) return;
-    track.scrollBy({
-      left: direction * track.clientWidth,
+    track.scrollTo({
+      left: navigation.stops[index],
       behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
     });
   }
@@ -64,18 +78,6 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
       aria-label={label}
       aria-roledescription="carousel"
     >
-      {navigation.overflow && (
-        <button
-          type="button"
-          className={`${s.previous} ${s.pressPrevious}`}
-          aria-label="Previous press logos"
-          aria-controls={trackId}
-          disabled={!navigation.previous}
-          onClick={() => move(-1)}
-        >
-          ‹
-        </button>
-      )}
       <div className={s.pressLogos} id={trackId} ref={trackRef}>
         {items.map((item, index) => {
           const image = <MediaImage media={item.image} sizes="(max-width:700px) 115px, 18vw" />;
@@ -97,17 +99,19 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
           );
         })}
       </div>
-      {navigation.overflow && (
-        <button
-          type="button"
-          className={`${s.next} ${s.pressNext}`}
-          aria-label="Next press logos"
-          aria-controls={trackId}
-          disabled={!navigation.next}
-          onClick={() => move(1)}
-        >
-          ›
-        </button>
+      {navigation.stops.length > 1 && (
+        <div className={s.pressDots} role="group" aria-label="Press logo navigation">
+          {navigation.stops.map((_, index) => (
+            <button
+              key={index}
+              type="button"
+              aria-label={`Go to press slide ${index + 1}`}
+              aria-controls={trackId}
+              aria-pressed={navigation.active === index}
+              onClick={() => goTo(index)}
+            />
+          ))}
+        </div>
       )}
     </div>
   );
