@@ -126,10 +126,26 @@ const storefront = {
     avatar: community[7],
   },
   press: [
-    { name: 'ECO-STYLIST', image: img('d2632da1441dc9417ed22e212377a050', 'ECO-STYLIST') },
-    { name: 'JILLIAN HARRIS', image: img('79e6df088d6c3e51fed79d96046fae99', 'Jillian Harris') },
-    { name: 'THE ECO HUB', image: img('a20fcdebf3bae85fa3d2fcd6c3438916', 'The Eco Hub') },
-    { name: 'TRENDHUNTER', image: img('a3a76024def33034269de694e3047f0a', 'Trendhunter') },
+    {
+      name: 'ECO-STYLIST',
+      image: img('d2632da1441dc9417ed22e212377a050', 'ECO-STYLIST'),
+      url: 'https://www.eco-stylist.com/',
+    },
+    {
+      name: 'JILLIAN HARRIS',
+      image: img('79e6df088d6c3e51fed79d96046fae99', 'Jillian Harris'),
+      url: 'https://jillianharris.com/',
+    },
+    {
+      name: 'THE ECO HUB',
+      image: img('a20fcdebf3bae85fa3d2fcd6c3438916', 'The Eco Hub'),
+      url: 'https://theecohub.com/',
+    },
+    {
+      name: 'TRENDHUNTER',
+      image: img('a3a76024def33034269de694e3047f0a', 'Trendhunter'),
+      url: 'https://www.trendhunter.com/',
+    },
   ],
   benefitsHeading: 'Loungewear you can be proud of.',
   benefits: [
@@ -162,14 +178,12 @@ const storefront = {
   reviewsHeading: 'What are our fans saying?',
   reviewsDescription: lorem + ' Fusce non nibh luctus.',
   communityImages: community,
-  testimonials: community
-    .slice(0, 3)
-    .map((avatar, i) => ({
-      name: 'Jane, S.',
-      rating: 5,
-      text: i === 1 ? `${lorem} ${lorem}` : lorem,
-      avatar,
-    })),
+  testimonials: community.slice(0, 3).map((avatar, i) => ({
+    name: 'Jane, S.',
+    rating: 5,
+    text: i === 1 ? `${lorem} ${lorem}` : lorem,
+    avatar,
+  })),
   faqHeading: 'Frequently asked questions.',
   faqs: Array.from({ length: 6 }, (_, i) => ({
     question: 'lorem ipsum dolor sit amet',

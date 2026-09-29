@@ -220,6 +220,10 @@ For deployment, provide production environment variables, a persistent PostgreSQ
 
 ## Troubleshooting
 
+Press logos are managed in **Content Manager → Storefront → press**. Each entry has a name, image and required absolute `http://` or `https://` URL. Publish the entry after editing. Links open in a new tab; navigation arrows appear only when the logo strip overflows its available width and are recalculated on resize. Swipe, trackpad scrolling and keyboard access to links remain available.
+
+For an existing database, restart Strapi to load the new `content.press.url` field, then run `node scripts/backfill-press-urls.cjs` from `cms/`. It fills only missing URLs for recognized seed logos in existing draft/published component rows, without publishing other draft changes or overwriting configured destinations. Set URLs manually for custom logos. Legacy entries with missing/invalid URLs remain visible without a clickable link.
+
 | Symptom                              | Check                                                                                                                        |
 | ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------- |
 | PostgreSQL password/connection error | Database service, port, database name and credentials in `cms/.env`.                                                         |

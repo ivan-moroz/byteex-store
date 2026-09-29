@@ -266,18 +266,54 @@ $muted: #676767;
     font-size: 16px;
     letter-spacing: 0.06em;
   }
+  .pressGallery {
+    position: relative;
+    margin-top: 25px;
+  }
   .pressLogos {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 45px;
-    margin-top: 25px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  .pressLogo {
+    flex: 0 0 18%;
+    min-width: 115px;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    scroll-snap-align: start;
+    &:focus-visible {
+      outline: 2px solid $navy;
+      outline-offset: -2px;
+    }
     img {
-      width: 18%;
+      width: 100%;
       height: 48px;
       object-fit: contain;
       opacity: 0.5;
     }
+  }
+  .pressPrevious,
+  .pressNext {
+    top: 50%;
+    transform: translateY(-50%);
+    &:disabled {
+      opacity: 0.25;
+      cursor: default;
+    }
+  }
+  .pressPrevious {
+    left: -44px;
+  }
+  .pressNext {
+    right: -44px;
   }
 }
 .benefits {
@@ -819,6 +855,16 @@ $muted: #676767;
   }
 }
 @media (max-width: 1100px) and (min-width: 701px) {
+  .press .pressPrevious {
+    left: -32px;
+    min-width: 32px;
+    padding-inline: 4px;
+  }
+  .press .pressNext {
+    right: -32px;
+    min-width: 32px;
+    padding-inline: 4px;
+  }
   .container {
     width: calc(100% - 64px);
   }
@@ -1009,20 +1055,42 @@ $muted: #676767;
     .container {
       width: 100%;
     }
+    .pressGallery {
+      margin-top: 22px;
+    }
     .pressLogos {
-      overflow-x: auto;
-      scroll-snap-type: x mandatory;
-      scrollbar-width: none;
       gap: 25px;
       justify-content: flex-start;
       padding: 0 20px;
-      margin-top: 22px;
+      scroll-padding-inline: 20px;
+    }
+    .pressLogo {
+      flex: 0 0 115px;
+      min-height: 44px;
       img {
         width: 115px;
         height: 40px;
-        flex-shrink: 0;
-        scroll-snap-align: center;
       }
+    }
+    .pressPrevious,
+    .pressNext {
+      // Controls sit below the track so the original logo spacing stays unchanged.
+      top: 100%;
+      transform: none;
+      font-size: 30px;
+    }
+    .pressPrevious {
+      left: calc(50% - 48px);
+    }
+    .pressNext {
+      right: calc(50% - 48px);
+    }
+    .pressGallery:has(.pressPrevious) {
+      padding-bottom: 44px;
+    }
+    .pressGallery:has(.pressPrevious) .pressPrevious,
+    .pressGallery:has(.pressNext) .pressNext {
+      top: calc(100% - 44px);
     }
   }
   .benefits {
