@@ -8,7 +8,7 @@ export const imageSchema = z.object({
 const itemSchema = z.object({
   title: z.string(),
   description: z.string().nullable().optional(),
-  icon: z.enum(['sun', 'leaf', 'waves', 'cart', 'truck', 'cloud', 'water', 'bolt']),
+  icon: z.enum(['sun', 'leaf', 'waves', 'cart', 'truck', 'cloud', 'water', 'bolt', 'shield']),
 });
 const quoteSchema = z.object({
   name: z.string(),

@@ -151,7 +151,7 @@ export function ProductLanding({ product, content }: { product: Product; content
             <p className={s.mobileOnly}>{content.finalMobileDescription}</p>
           </div>
           <PhotoCollage images={content.finalImages} variant="final" />
-          <CallToAction content={content} />
+          <CallToAction content={content} review={false} />
           <PurchaseAssurance content={content.purchaseAssurance} />
         </section>
       </main>
