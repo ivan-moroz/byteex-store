@@ -8,7 +8,7 @@ export const imageSchema = z.object({
 const itemSchema = z.object({
   title: z.string(),
   description: z.string().nullable().optional(),
-  icon: z.enum(['sun', 'leaf', 'waves', 'cart', 'truck', 'cloud', 'water', 'bolt']),
+  icon: z.enum(['sun', 'leaf', 'waves', 'cart', 'truck', 'cloud', 'water', 'bolt', 'shield']),
 });
 const quoteSchema = z.object({
   name: z.string(),
@@ -40,6 +40,13 @@ export const productSchema = z.object({
   sortOrder: z.number().optional(),
 });
 export const storefrontSchema = z.object({
+  purchaseAssurance: z
+    .object({
+      shippingNotice: z.string(),
+      paymentMethods: z.array(z.object({ name: z.string(), imageUrl: z.string().min(1) })),
+      benefits: z.array(z.object({ text: z.string(), icon: z.enum(['truck', 'shield', 'cart']) })),
+    })
+    .nullish(),
   brandName: z.string(),
   announcement: z.string(),
   mobileAnnouncement: z.string(),

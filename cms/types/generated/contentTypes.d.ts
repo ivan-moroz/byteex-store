@@ -471,6 +471,7 @@ export interface ApiStorefrontStorefront extends Struct.SingleTypeSchema {
     pressLabel: Schema.Attribute.String & Schema.Attribute.Required;
     processHeading: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    purchaseAssurance: Schema.Attribute.JSON;
     reviewLabel: Schema.Attribute.String & Schema.Attribute.Required;
     reviewsDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     reviewsHeading: Schema.Attribute.String & Schema.Attribute.Required;

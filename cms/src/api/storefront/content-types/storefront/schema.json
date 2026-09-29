@@ -106,6 +106,9 @@
       "type": "text",
       "required": true
     },
+    "purchaseAssurance": {
+      "type": "json"
+    },
     "heroBenefits": {
       "type": "component",
       "component": "content.item",

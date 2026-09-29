@@ -43,11 +43,17 @@ export function Icon({ name }: { name: ContentItem['icon'] }) {
       </>
     ),
     bolt: <path d="m14 1-10 13h7l-1 9 10-14h-7l1-8Z" />,
+    shield: (
+      <>
+        <path d="M12 2c3 2 6 3 9 3-1 9-4 14-9 17C7 19 4 14 3 5c3 0 6-1 9-3Z" />
+        <path d="m8 11 3 3 5-6" />
+      </>
+    ),
   };
   return (
     <svg
-      width="28"
-      height="28"
+      width="20"
+      height="20"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"

@@ -101,6 +101,7 @@ const schemas = {
       finalHeading: str(),
       finalDescription: text(),
       finalMobileDescription: text(),
+      purchaseAssurance: { type: 'json' },
       heroBenefits: comp('item'),
       heroReview: comp('quote', false),
       press: comp('press'),

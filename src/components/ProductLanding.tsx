@@ -5,6 +5,7 @@ import { Icon } from './Icon';
 import { ProductGallery } from './ProductGallery';
 import { Carousel } from './Carousel';
 import { PressGallery } from './PressGallery';
+import { PurchaseAssurance } from './PurchaseAssurance';
 import s from './Storefront.module.scss';
 export function ProductLanding({ product, content }: { product: Product; content: Storefront }) {
   return (
@@ -150,7 +151,8 @@ export function ProductLanding({ product, content }: { product: Product; content
             <p className={s.mobileOnly}>{content.finalMobileDescription}</p>
           </div>
           <PhotoCollage images={content.finalImages} variant="final" />
-          <CallToAction content={content} />
+          <CallToAction content={content} review={false} />
+          <PurchaseAssurance content={content.purchaseAssurance} />
         </section>
       </main>
     </>

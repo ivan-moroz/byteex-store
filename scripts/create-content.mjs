@@ -208,6 +208,25 @@ const storefront = {
   finalDescription: lorem,
   finalMobileDescription: 'Click below to browse our collection!',
   finalImages: [sage, print, shorts],
+  purchaseAssurance: {
+    shippingNotice: 'Ships in 1-2 Days',
+    paymentMethods: [
+      ['american_express', 'American Express'],
+      ['apple_pay', 'Apple Pay'],
+      ['diners_club', 'Diners Club'],
+      ['discover', 'Discover'],
+      ['google_pay', 'Google Pay'],
+      ['master', 'Mastercard'],
+      ['paypal', 'PayPal'],
+      ['shopify_pay', 'Shop Pay'],
+      ['visa', 'Visa'],
+    ].map(([file, name]) => ({ name, imageUrl: `/payments/${file}.svg` })),
+    benefits: [
+      { text: 'FREE Shipping on\nOrders over $200', icon: 'truck' },
+      { text: 'Over 500+ 5 Star\nReviews Online', icon: 'shield' },
+      { text: 'Made ethically\nand responsibly.', icon: 'cart' },
+    ],
+  },
 };
 await mkdir('content', { recursive: true });
 await writeFile('content/seed.json', JSON.stringify({ products, storefront }, null, 2) + '\n');
