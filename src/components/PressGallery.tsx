@@ -1,75 +1,49 @@
 'use client';
 
-import { useEffect, useId, useRef, useState } from 'react';
+import { useLayoutEffect, useId, useRef, useState } from 'react';
 import type { Storefront } from '@/lib/content-schema';
+import { pressPageSize } from '@/lib/press-pagination';
 import { MediaImage } from './MediaImage';
 import s from './Storefront.module.scss';
 
 export function PressGallery({ items, label }: { items: Storefront['press']; label: string }) {
   const trackRef = useRef<HTMLDivElement>(null);
   const trackId = useId();
-  const [navigation, setNavigation] = useState({ stops: [0], active: 0 });
+  const measureRef = useRef<HTMLSpanElement>(null);
+  const [pageSize, setPageSize] = useState(0);
+  const [page, setPage] = useState(0);
+  const pageCount = pageSize ? Math.ceil(items.length / pageSize) : 0;
+  const active = Math.min(page, Math.max(0, pageCount - 1));
+  const visibleItems = items.slice(active * pageSize, (active + 1) * pageSize);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const track = trackRef.current;
     if (!track) return;
-    let frame = 0;
     const measure = () => {
-      const maximum = Math.max(0, track.scrollWidth - track.clientWidth);
-      const position = Math.max(0, Math.min(track.scrollLeft, maximum));
-      const stops = [0];
-      if (maximum > 1) {
-        const padding = parseFloat(getComputedStyle(track).paddingLeft) || 0;
-        const left = track.getBoundingClientRect().left;
-        for (const child of track.children) {
-          const offset = Math.min(
-            maximum,
-            Math.max(0, child.getBoundingClientRect().left - left + track.scrollLeft - padding),
-          );
-          if (offset - stops[stops.length - 1] > 1) stops.push(offset);
-        }
-        if (maximum - stops[stops.length - 1] > 1) stops.push(maximum);
-      }
-      const active = stops.reduce(
-        (nearest, offset, index) =>
-          Math.abs(offset - position) < Math.abs(stops[nearest] - position) ? index : nearest,
-        0,
+      const style = getComputedStyle(track);
+      const available =
+        track.getBoundingClientRect().width -
+        (parseFloat(style.borderLeftWidth) || 0) -
+        (parseFloat(style.borderRightWidth) || 0) -
+        (parseFloat(style.paddingLeft) || 0) -
+        (parseFloat(style.paddingRight) || 0);
+      const size = pressPageSize(
+        available,
+        measureRef.current?.getBoundingClientRect().width || 0,
+        parseFloat(style.columnGap) || 0,
+        items.length,
       );
-      const next = { stops, active };
-      setNavigation((current) =>
-        current.active === active &&
-        current.stops.length === stops.length &&
-        current.stops.every((offset, index) => offset === stops[index])
-          ? current
-          : next,
+      setPageSize(size);
+      setPage((current) =>
+        Math.min(current, Math.max(0, size ? Math.ceil(items.length / size) - 1 : 0)),
       );
     };
-    const schedule = () => {
-      cancelAnimationFrame(frame);
-      frame = requestAnimationFrame(measure);
-    };
-    const observer = new ResizeObserver(schedule);
+    const observer = new ResizeObserver(measure);
     observer.observe(track);
-    for (const child of track.children) observer.observe(child);
-    track.addEventListener('scroll', schedule, { passive: true });
-    track.addEventListener('load', schedule, true);
-    schedule();
-    return () => {
-      cancelAnimationFrame(frame);
-      observer.disconnect();
-      track.removeEventListener('scroll', schedule);
-      track.removeEventListener('load', schedule, true);
-    };
-  }, [items]);
-
-  function goTo(index: number) {
-    const track = trackRef.current;
-    if (!track) return;
-    track.scrollTo({
-      left: navigation.stops[index],
-      behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth',
-    });
-  }
+    if (measureRef.current) observer.observe(measureRef.current);
+    measure();
+    return () => observer.disconnect();
+  }, [items.length]);
 
   return (
     <div
@@ -79,7 +53,8 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
       aria-roledescription="carousel"
     >
       <div className={s.pressLogos} id={trackId} ref={trackRef}>
-        {items.map((item, index) => {
+        <span className={`${s.pressLogo} ${s.pressMeasure}`} ref={measureRef} aria-hidden="true" />
+        {visibleItems.map((item, index) => {
           const image = <MediaImage media={item.image} sizes="(max-width:700px) 115px, 18vw" />;
           return item.url ? (
             <a
@@ -99,16 +74,16 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
           );
         })}
       </div>
-      {navigation.stops.length > 1 && (
+      {pageCount > 1 && (
         <div className={s.pressDots} role="group" aria-label="Press logo navigation">
-          {navigation.stops.map((_, index) => (
+          {Array.from({ length: pageCount }, (_, index) => (
             <button
               key={index}
               type="button"
-              aria-label={`Go to press slide ${index + 1}`}
+              aria-label={`Go to press page ${index + 1}`}
               aria-controls={trackId}
-              aria-pressed={navigation.active === index}
-              onClick={() => goTo(index)}
+              aria-pressed={active === index}
+              onClick={() => setPage(index)}
             />
           ))}
         </div>
