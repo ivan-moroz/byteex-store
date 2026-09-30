@@ -1,0 +1,81 @@
+.carousel {
+  composes: carousel from '../Storefront.module.scss';
+}
+.noDots {
+  composes: noDots from '../Storefront.module.scss';
+}
+.slide {
+  composes: slide from '../Storefront.module.scss';
+}
+.stepCarousel {
+  composes: stepCarousel from '../Storefront.module.scss';
+}
+.carousel {
+  position: relative;
+  min-width: 0;
+}
+.noDots > .dots {
+  display: none;
+}
+.carouselTrack {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  align-items: flex-start;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+.slide {
+  flex: 0 0 calc((100% - 80px) / 3);
+  scroll-snap-align: start;
+  min-width: 0;
+}
+.dots {
+  display: none;
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+  .carouselTrack {
+    gap: 24px;
+  }
+  .slide {
+    flex-basis: calc((100% - 48px) / 3);
+  }
+}
+@media (max-width: 700px) {
+  .carouselTrack {
+    gap: 24px;
+    align-items: stretch;
+  }
+  .slide {
+    flex: 0 0 100%;
+  }
+  .stepCarousel {
+    margin-inline: 22px;
+  }
+  .dots {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 15px;
+    button {
+      width: 24px;
+      height: 24px;
+      border: 0;
+      background: transparent;
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        inset: 9px;
+        border-radius: 50%;
+        background: #ccc;
+      }
+      &[aria-pressed='true']:after {
+        background: #333;
+      }
+    }
+  }
+}

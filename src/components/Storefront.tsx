@@ -1,25 +1,30 @@
 import Link from 'next/link';
 import type { Media, Quote, Storefront } from '@/lib/content-schema';
 import { MediaImage } from './MediaImage';
+import headerStyles from './styles/Header.module.scss';
+import ratingStyles from './styles/Rating.module.scss';
+import callToActionStyles from './styles/CallToAction.module.scss';
+import photoCollageStyles from './styles/PhotoCollage.module.scss';
+import reviewCardStyles from './styles/ReviewCard.module.scss';
 import s from './Storefront.module.scss';
 export function Header({ content, catalog = false }: { content: Storefront; catalog?: boolean }) {
   return (
     <>
-      <div className={s.announcement}>
+      <div className={headerStyles.announcement}>
         <span>{content.announcement}</span>
         <span>{content.mobileAnnouncement}</span>
       </div>
-      <header className={`${s.container} ${s.header}`}>
+      <header className={`${s.container} ${headerStyles.header}`}>
         <Link
           href="/products"
-          className={s.logo}
+          className={headerStyles.logo}
           aria-label={`${content.brandName} — ${content.catalogLinkLabel}`}
         >
           {content.brandName}
           <span aria-hidden="true">▪</span>
         </Link>
         {catalog && (
-          <a href="#collection" className={s.catalogLink}>
+          <a href="#collection" className={headerStyles.catalogLink}>
             {content.catalogLinkLabel} <span aria-hidden="true">↗</span>
           </a>
         )}
@@ -29,8 +34,8 @@ export function Header({ content, catalog = false }: { content: Storefront; cata
 }
 export function Rating({ label, rating = 5 }: { label: string; rating?: number }) {
   return (
-    <div className={s.rating}>
-      <span className={s.stars} aria-label={`${rating} out of 5 stars`}>
+    <div className={ratingStyles.rating}>
+      <span className={ratingStyles.stars} aria-label={`${rating} out of 5 stars`}>
         {'★'.repeat(Math.round(rating))}
       </span>
       <span>{label}</span>
@@ -45,8 +50,8 @@ export function CallToAction({
   review?: boolean;
 }) {
   return (
-    <div className={s.ctaGroup}>
-      <Link href={content.ctaHref} className={s.button}>
+    <div className={callToActionStyles.ctaGroup}>
+      <Link href={content.ctaHref} className={callToActionStyles.button}>
         {content.ctaLabel}
         <span aria-hidden="true">⟶</span>
       </Link>
@@ -64,7 +69,9 @@ export function PhotoCollage({
   priority?: boolean;
 }) {
   return (
-    <div className={`${s.collage} ${s[variant + 'Collage']}`}>
+    <div
+      className={`${photoCollageStyles.collage} ${photoCollageStyles[variant + 'Collage'] ?? s[variant + 'Collage']}`}
+    >
       {images.slice(0, 3).map((media, i) => (
         <MediaImage
           key={`${media.url}-${i}`}
@@ -86,7 +93,9 @@ export function ReviewCard({
   label?: string;
 }) {
   return (
-    <figure className={`${s.reviewCard} ${compact ? s.compactReview : ''}`}>
+    <figure
+      className={`${reviewCardStyles.reviewCard} ${compact ? reviewCardStyles.compactReview : ''}`}
+    >
       <figcaption>
         <MediaImage media={quote.avatar} sizes="40px" />
         <div>

@@ -7,6 +7,7 @@ import { Carousel } from './Carousel';
 import { PressGallery } from './PressGallery';
 import { PurchaseAssurance } from './PurchaseAssurance';
 import s from './Storefront.module.scss';
+import pressGalleryStyles from './styles/PressGallery.module.scss';
 export function ProductLanding({ product, content }: { product: Product; content: Storefront }) {
   return (
     <>
@@ -32,7 +33,10 @@ export function ProductLanding({ product, content }: { product: Product; content
             <ReviewCard quote={content.heroReview} compact label={content.reviewLabel} />
           </div>
         </section>
-        <section className={s.press} aria-label={content.pressLabel}>
+        <section
+          className={`${s.press} ${pressGalleryStyles.press}`}
+          aria-label={content.pressLabel}
+        >
           <div className={s.container}>
             <p>{content.pressLabel}</p>
             <PressGallery items={content.press} label={content.pressLabel} />

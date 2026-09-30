@@ -1,0 +1,15 @@
+$navy: #01005b;
+$cream: #f9f0e5;
+$gray: #f0eeee;
+$muted: #676767;
+@mixin bodyType($size: 15px, $leading: 23px) {
+  font-size: $size;
+  line-height: $leading;
+  letter-spacing: var(--tracking-body);
+}
+@mixin headingType($size: 32px, $leading: 40px) {
+  font-size: $size;
+  line-height: $leading;
+  font-weight: var(--type-regular);
+  letter-spacing: var(--tracking-heading);
+}

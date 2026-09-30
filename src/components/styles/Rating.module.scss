@@ -1,0 +1,31 @@
+.rating {
+  composes: rating from '../Storefront.module.scss';
+}
+.stars {
+  composes: stars from '../Storefront.module.scss';
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #737373;
+  font-size: 12px;
+  font-family: var(--font-ui);
+  line-height: 20px;
+  letter-spacing: 0.02em;
+}
+.stars {
+  color: #f4bf00;
+  white-space: nowrap;
+  font-size: 17px;
+  letter-spacing: 1px;
+}
+@media (max-width: 700px) {
+  .rating {
+    gap: 10px;
+  }
+  .stars {
+    font-size: 16px;
+  }
+}

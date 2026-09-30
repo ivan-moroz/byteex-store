@@ -1,0 +1,129 @@
+@use './tokens' as *;
+.heroCollage {
+  composes: heroCollage from '../Storefront.module.scss';
+}
+.storyCollage {
+  composes: storyCollage from '../Storefront.module.scss';
+}
+.faqCollage {
+  composes: faqCollage from '../Storefront.module.scss';
+}
+.collage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
+  img {
+    object-fit: cover;
+    height: auto;
+    min-width: 0;
+    position: relative;
+  }
+  img:nth-child(2) {
+    z-index: 1;
+  }
+  .heroCollage {
+    width: 100%;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 27%;
+    height: 46%;
+    background: linear-gradient(90deg, #fbf7f1, $cream, #fbf7f1);
+    z-index: -1;
+  }
+}
+.heroCollage {
+  height: 430px;
+  padding-inline: 32px;
+  gap: 4px;
+  img:nth-child(1),
+  img:nth-child(3) {
+    width: 28%;
+    height: 76%;
+  }
+  img:nth-child(2) {
+    width: 43%;
+    height: 100%;
+  }
+}
+.storyCollage {
+  display: block;
+  height: 555px;
+  margin-right: 25px;
+  &:before {
+    display: none;
+  }
+  img {
+    position: absolute;
+    border: 4px solid $gray;
+    object-fit: cover;
+  }
+  img:nth-child(1) {
+    width: 34%;
+    height: 34%;
+    left: 0;
+    top: 0;
+    z-index: 2;
+  }
+  img:nth-child(2) {
+    width: 77%;
+    height: 88%;
+    left: 14%;
+    top: 7%;
+  }
+  img:nth-child(3) {
+    width: 28%;
+    height: 31%;
+    right: -5%;
+    bottom: 0;
+    z-index: 2;
+  }
+}
+.faqCollage {
+  height: 580px;
+  display: block;
+  &:before {
+    top: 13%;
+    height: 75%;
+  }
+  img {
+    position: absolute;
+    object-fit: cover;
+    border: 3px solid white;
+  }
+  img:nth-child(1) {
+    width: 46%;
+    height: 45%;
+    right: 0;
+    top: 0;
+  }
+  img:nth-child(2) {
+    width: 61%;
+    height: 63%;
+    left: 18%;
+    top: 22%;
+  }
+  img:nth-child(3) {
+    width: 51%;
+    height: 30%;
+    left: 0;
+    bottom: 0;
+  }
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+  .heroCollage {
+    height: 350px;
+    padding-inline: 15px;
+  }
+  .storyCollage {
+    height: 460px;
+  }
+  .faqCollage {
+    height: 440px;
+  }
+}
