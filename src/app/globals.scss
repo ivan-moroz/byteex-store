@@ -1,3 +1,12 @@
+:root {
+  // Licensed Sofia Pro / Suisse Int'l webfonts are not available yet.
+  --font-body: 'Century Gothic', 'Avenir Next', Arial, sans-serif;
+  --font-ui: var(--font-body);
+  --type-regular: 400;
+  --type-semibold: 600;
+  --tracking-body: 0.03em;
+  --tracking-heading: 0.04em;
+}
 * {
   box-sizing: border-box;
 }
@@ -8,7 +17,7 @@ body {
   margin: 0;
   color: #01005b;
   background: #fff;
-  font-family: 'Century Gothic', 'Avenir Next', Arial, sans-serif;
+  font-family: var(--font-body);
   font-size: 15px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
@@ -43,8 +52,8 @@ figure {
 h1,
 h2,
 h3 {
-  font-weight: 500;
-  letter-spacing: 0.035em;
+  font-weight: var(--type-regular);
+  letter-spacing: var(--tracking-heading);
 }
 p {
   line-height: 1.65;
