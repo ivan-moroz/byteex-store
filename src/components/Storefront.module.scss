@@ -409,16 +409,25 @@ $muted: #676767;
   border: 0;
   background: transparent;
   position: absolute;
-  top: 45%;
+  top: 50%;
+  margin-top: -39px;
   font-size: 40px;
   font-weight: 200;
   color: #888;
   padding: 4px 10px;
   line-height: 1;
   z-index: 2;
-  min-height: 44px;
-  min-width: 44px;
+  height: 44px;
+  width: 44px;
 }
+
+.noDots {
+  .previous,
+  .next {
+    margin-top: -22px;  
+  }
+}
+
 .previous {
   left: -48px;
 }
@@ -532,6 +541,9 @@ $muted: #676767;
 .carousel {
   position: relative;
   min-width: 0;
+}
+.noDots > .dots {
+  display: none;
 }
 .carouselTrack {
   display: flex;
@@ -764,6 +776,11 @@ $muted: #676767;
   }
   .ctaGroup {
     margin: auto;
+  }
+}
+@media (min-width: 701px) {
+  .final > .ctaGroup > .rating {
+    display: none;
   }
 }
 .purchaseAssurance {
@@ -1117,7 +1134,6 @@ $muted: #676767;
     }
   }
   .rating {
-    font-size: 9px;
     gap: 10px;
   }
   .stars {
@@ -1130,9 +1146,6 @@ $muted: #676767;
     }
     blockquote {
       font-size: 12px;
-    }
-    .rating {
-      font-size: 9px;
     }
     .stars {
       font-size: 13px;

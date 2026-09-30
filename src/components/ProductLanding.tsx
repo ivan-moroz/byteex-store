@@ -74,7 +74,7 @@ export function ProductLanding({ product, content }: { product: Product; content
         </section>
         <section className={`${s.container} ${s.process}`} aria-labelledby="process-heading">
           <h2 id="process-heading">{content.processHeading}</h2>
-          <Carousel label={content.processHeading} kind="steps">
+          <Carousel label={content.processHeading} kind="steps" showDots={false}>
             {content.steps.map((item) => (
               <article className={s.stepCard} key={item.title}>
                 <Icon name={item.icon} />
@@ -151,7 +151,7 @@ export function ProductLanding({ product, content }: { product: Product; content
             <p className={s.mobileOnly}>{content.finalMobileDescription}</p>
           </div>
           <PhotoCollage images={content.finalImages} variant="final" />
-          <CallToAction content={content} review={false} />
+          <CallToAction content={content} />
           <PurchaseAssurance content={content.purchaseAssurance} />
         </section>
       </main>
