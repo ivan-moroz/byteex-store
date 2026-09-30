@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import type { Product, Storefront } from '@/lib/content-schema';
 import { MediaImage } from './MediaImage';
+import styles from './styles/ProductCatalog.module.scss';
 import s from './Storefront.module.scss';
 export function ProductCatalog({
   products,
@@ -16,7 +17,7 @@ export function ProductCatalog({
   const filtered = products.filter((p) => category === null || p.category === category);
   return (
     <section id="collection" className={`${s.container} ${s.catalog}`}>
-      <div className={s.filters} role="group" aria-label="Product categories">
+      <div className={styles.filters} role="group" aria-label="Product categories">
         <button type="button" aria-pressed={category === null} onClick={() => setCategory(null)}>
           {content.allCategoryLabel}
         </button>
@@ -31,11 +32,11 @@ export function ProductCatalog({
           </button>
         ))}
       </div>
-      <div className={s.productGrid}>
+      <div className={styles.productGrid}>
         {filtered.map((product, i) => (
-          <article className={s.productCard} key={product.slug}>
+          <article className={styles.productCard} key={product.slug}>
             <Link href={`/products/${product.slug}`}>
-              <div className={s.productImage}>
+              <div className={styles.productImage}>
                 <MediaImage
                   media={product.gallery[0]}
                   priority={i < 3}
@@ -45,7 +46,7 @@ export function ProductCatalog({
                   {content.viewProductLabel} <span aria-hidden="true">⟶</span>
                 </span>
               </div>
-              <div className={s.productMeta}>
+              <div className={styles.productMeta}>
                 <p>{product.category}</p>
                 <h2>{product.title}</h2>
                 <p>{product.description}</p>

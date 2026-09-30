@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import type { Media } from '@/lib/content-schema';
 import { MediaImage } from './MediaImage';
+import styles from './styles/ProductGallery.module.scss';
 import s from './Storefront.module.scss';
 export function ProductGallery({ images, caption }: { images: Media[]; caption: string }) {
   const [selected, setSelected] = useState(0);
@@ -9,7 +10,7 @@ export function ProductGallery({ images, caption }: { images: Media[]; caption: 
     setSelected((current) => (current + offset + images.length) % images.length);
   return (
     <div
-      className={s.gallery}
+      className={styles.gallery}
       role="region"
       aria-label={caption}
       onKeyDown={(e) => {
@@ -17,7 +18,7 @@ export function ProductGallery({ images, caption }: { images: Media[]; caption: 
         if (e.key === 'ArrowLeft') move(-1);
       }}
     >
-      <div className={s.galleryMain}>
+      <div className={styles.galleryMain}>
         <button
           type="button"
           className={s.previous}
@@ -30,7 +31,7 @@ export function ProductGallery({ images, caption }: { images: Media[]; caption: 
         <button type="button" className={s.next} aria-label="Next image" onClick={() => move(1)}>
           ›
         </button>
-        <div className={s.thumbnails}>
+        <div className={styles.thumbnails}>
           {images.map((image, i) => (
             <button
               type="button"

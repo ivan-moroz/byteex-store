@@ -4,7 +4,7 @@ import { useLayoutEffect, useId, useRef, useState } from 'react';
 import type { Storefront } from '@/lib/content-schema';
 import { pressPageSize } from '@/lib/press-pagination';
 import { MediaImage } from './MediaImage';
-import s from './Storefront.module.scss';
+import styles from './styles/PressGallery.module.scss';
 
 export function PressGallery({ items, label }: { items: Storefront['press']; label: string }) {
   const trackRef = useRef<HTMLDivElement>(null);
@@ -47,18 +47,22 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
 
   return (
     <div
-      className={s.pressGallery}
+      className={styles.pressGallery}
       role="region"
       aria-label={label}
       aria-roledescription="carousel"
     >
-      <div className={s.pressLogos} id={trackId} ref={trackRef}>
-        <span className={`${s.pressLogo} ${s.pressMeasure}`} ref={measureRef} aria-hidden="true" />
+      <div className={styles.pressLogos} id={trackId} ref={trackRef}>
+        <span
+          className={`${styles.pressLogo} ${styles.pressMeasure}`}
+          ref={measureRef}
+          aria-hidden="true"
+        />
         {visibleItems.map((item, index) => {
           const image = <MediaImage media={item.image} sizes="(max-width:700px) 115px, 18vw" />;
           return item.url ? (
             <a
-              className={s.pressLogo}
+              className={styles.pressLogo}
               key={`${item.name}-${index}`}
               href={item.url}
               target="_blank"
@@ -68,14 +72,14 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
               {image}
             </a>
           ) : (
-            <span className={s.pressLogo} key={`${item.name}-${index}`}>
+            <span className={styles.pressLogo} key={`${item.name}-${index}`}>
               {image}
             </span>
           );
         })}
       </div>
       {pageCount > 1 && (
-        <div className={s.pressDots} role="group" aria-label="Press logo navigation">
+        <div className={styles.pressDots} role="group" aria-label="Press logo navigation">
           {Array.from({ length: pageCount }, (_, index) => (
             <button
               key={index}

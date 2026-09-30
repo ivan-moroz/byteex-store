@@ -1,5 +1,6 @@
 'use client';
 import { useRef, useState, type ReactNode } from 'react';
+import styles from './styles/Carousel.module.scss';
 import s from './Storefront.module.scss';
 export function Carousel({
   children,
@@ -24,7 +25,7 @@ export function Carousel({
   }
   return (
     <div
-      className={`${s.carousel} ${kind === 'steps' ? s.stepCarousel : ''} ${!showDots ? s.noDots : ''}`}
+      className={`${styles.carousel} ${kind === 'steps' ? styles.stepCarousel : ''} ${!showDots ? styles.noDots : ''}`}
       role="region"
       aria-label={label}
     >
@@ -37,7 +38,7 @@ export function Carousel({
         ‹
       </button>
       <div
-        className={s.carouselTrack}
+        className={styles.carouselTrack}
         ref={ref}
         onScroll={() => {
           const track = ref.current;
@@ -47,7 +48,7 @@ export function Carousel({
         }}
       >
         {children.map((child, i) => (
-          <div className={s.slide} key={i}>
+          <div className={styles.slide} key={i}>
             {child}
           </div>
         ))}
@@ -61,7 +62,7 @@ export function Carousel({
         ›
       </button>
       {showDots && (
-        <div className={s.dots}>
+        <div className={styles.dots}>
           {children.map((_, i) => (
             <button
               type="button"

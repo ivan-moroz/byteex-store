@@ -1,0 +1,96 @@
+@use './tokens' as *;
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 40px;
+  button {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 12px 22px;
+    border-radius: 30px;
+    font-size: 13px;
+    min-height: 44px;
+    &[aria-pressed='true'] {
+      background: $navy;
+      color: white;
+      border-color: $navy;
+    }
+  }
+}
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 48px 30px;
+}
+.productCard {
+  min-width: 0;
+  a {
+    display: block;
+  }
+  &:hover .productImage > img {
+    transform: scale(1.025);
+  }
+}
+.productImage {
+  position: relative;
+  overflow: hidden;
+  background: $cream;
+  > img {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+  > span {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+    right: 18px;
+    background: white;
+    padding: 14px 18px;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.productMeta {
+  padding-top: 18px;
+  p:first-child {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #888;
+  }
+  h2 {
+    font-size: 23px;
+    margin: 8px 0;
+  }
+  p:last-child {
+    font-size: 13px;
+    color: $muted;
+  }
+}
+@media (max-width: 1100px) and (min-width: 701px) {
+  .productGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 700px) {
+  .filters {
+    gap: 8px;
+    margin-bottom: 28px;
+    button {
+      font-size: 12px;
+      padding: 10px 16px;
+    }
+  }
+  .productGrid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .productMeta h2 {
+    font-size: 23px;
+  }
+}

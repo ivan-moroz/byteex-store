@@ -1,0 +1,95 @@
+@use './tokens' as *;
+// ProductLanding applies this scope beside its shared press section class.
+.press {
+  .pressGallery {
+    position: relative;
+    margin-top: 25px;
+  }
+  .pressLogos {
+    --press-logo-width: 18%;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 45px;
+    height: 48px;
+    overflow: clip;
+  }
+  .pressLogo {
+    flex: 0 0 var(--press-logo-width);
+    min-width: 115px;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+    &:focus-visible {
+      outline: 2px solid $navy;
+      outline-offset: -2px;
+    }
+    img {
+      width: 100%;
+      height: 48px;
+      object-fit: contain;
+      opacity: 0.5;
+    }
+  }
+  .pressMeasure {
+    position: absolute;
+    width: var(--press-logo-width);
+    visibility: hidden;
+    pointer-events: none;
+  }
+  .pressDots {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    button {
+      display: grid;
+      place-items: center;
+      width: 20px;
+      min-width: 20px;
+      height: 20px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      &::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #c4c4c4;
+      }
+      &[aria-pressed='true']::after {
+        background: #000;
+      }
+      &:focus-visible {
+        outline: 2px solid $navy;
+        outline-offset: 2px;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .press {
+    .pressGallery {
+      margin-top: 22px;
+    }
+    .pressLogos {
+      --press-logo-width: 115px;
+      height: 44px;
+      gap: 25px;
+      justify-content: center;
+      padding: 0 20px;
+    }
+    .pressLogo {
+      min-height: 44px;
+      img {
+        width: 115px;
+        height: 40px;
+      }
+    }
+  }
+}
