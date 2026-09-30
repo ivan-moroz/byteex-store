@@ -224,7 +224,7 @@ The desktop-only shipping/payment assurance strip is configured in **Storefront 
 
 Payment SVGs come from [ActiveMerchant payment_icons](https://github.com/activemerchant/payment_icons) with the license included in `public/payments/MIT-LICENSE`. They are display assets; the project does not implement payment processing.
 
-Press logos are managed in **Content Manager → Storefront → press**. Each entry has a name, image and required absolute `http://` or `https://` URL. Publish the entry after editing. Links open in a new tab; centered navigation dots appear only when the logo strip overflows its available width and are recalculated on resize; the active dot is black and other dots are light gray. Swipe, trackpad scrolling and keyboard access to links remain available.
+Press logos are managed in **Content Manager → Storefront → press**. Each entry has a name, image and required absolute `http://` or `https://` URL. Publish the entry after editing. Links open in a new tab. The gallery displays paginated groups of whole logos, sized from the available container width, logo width, and gap. Centered dots select a group without sliding or scrolling; they disappear when all logos fit. ResizeObserver recalculates capacity and clamps the current page after resizing. Keyboard access to dots and links remains available.
 
 For an existing database, restart Strapi to load the new `content.press.url` field, then run `node scripts/backfill-press-urls.cjs` from `cms/`. It fills only missing URLs for recognized seed logos in existing draft/published component rows, without publishing other draft changes or overwriting configured destinations. Set URLs manually for custom logos. Legacy entries with missing/invalid URLs remain visible without a clickable link.
 
