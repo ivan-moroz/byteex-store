@@ -5,10 +5,12 @@ export function Carousel({
   children,
   label,
   kind = 'reviews',
+  showDots = true,
 }: {
   children: ReactNode[];
   label: string;
   kind?: 'reviews' | 'steps';
+  showDots?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [active, setActive] = useState(0);
@@ -22,7 +24,7 @@ export function Carousel({
   }
   return (
     <div
-      className={`${s.carousel} ${kind === 'steps' ? s.stepCarousel : ''}`}
+      className={`${s.carousel} ${kind === 'steps' ? s.stepCarousel : ''} ${!showDots ? s.noDots : ''}`}
       role="region"
       aria-label={label}
     >
@@ -58,17 +60,19 @@ export function Carousel({
       >
         ›
       </button>
-      <div className={s.dots}>
-        {children.map((_, i) => (
-          <button
-            type="button"
-            key={i}
-            aria-label={`Go to slide ${i + 1}`}
-            aria-pressed={active === i}
-            onClick={() => go(i)}
-          />
-        ))}
-      </div>
+      {showDots && (
+        <div className={s.dots}>
+          {children.map((_, i) => (
+            <button
+              type="button"
+              key={i}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-pressed={active === i}
+              onClick={() => go(i)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }
