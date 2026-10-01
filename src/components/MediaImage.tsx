@@ -1,10 +1,11 @@
+import { MOBILE_MEDIA_QUERY } from '@/config/breakpoints';
 import Image from 'next/image';
 import type { Media } from '@/lib/content-schema';
 export function MediaImage({
   media,
   className,
   priority = false,
-  sizes = '(max-width: 700px) 90vw, 40vw',
+  sizes = `${MOBILE_MEDIA_QUERY} 90vw, 40vw`,
 }: {
   media: Media;
   className?: string;

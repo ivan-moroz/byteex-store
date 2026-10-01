@@ -1,3 +1,4 @@
+import { MOBILE_MEDIA_QUERY } from '@/config/breakpoints';
 import Link from 'next/link';
 import type { Media, Quote, Storefront } from '@/lib/content-schema';
 import { MediaImage } from './MediaImage';
@@ -77,7 +78,7 @@ export function PhotoCollage({
           key={`${media.url}-${i}`}
           media={media}
           priority={priority}
-          sizes="(max-width: 700px) 35vw, 25vw"
+          sizes={`${MOBILE_MEDIA_QUERY} 35vw, 25vw`}
         />
       ))}
     </div>

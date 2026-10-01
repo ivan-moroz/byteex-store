@@ -21,7 +21,7 @@
   font-size: 17px;
   letter-spacing: 1px;
 }
-@media (max-width: 700px) {
+@media (max-width: $mobile-max-width) {
   .rating {
     gap: 10px;
   }

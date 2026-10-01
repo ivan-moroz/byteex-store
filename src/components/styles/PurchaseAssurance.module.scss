@@ -65,14 +65,14 @@
   border-radius: 50%;
   background: #ece9e4;
 }
-@media (min-width: 701px) and (max-width: 1100px) {
+@media (min-width: $desktop-min-width) and (max-width: 1100px) {
   .purchaseBenefits li {
     padding-inline: 16px;
     gap: 14px;
     font-size: 14px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: $mobile-max-width) {
   .purchaseAssurance {
     display: none;
   }

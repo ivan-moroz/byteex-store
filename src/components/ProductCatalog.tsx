@@ -1,4 +1,5 @@
 'use client';
+import { MOBILE_MEDIA_QUERY } from '@/config/breakpoints';
 import { useState } from 'react';
 import Link from 'next/link';
 import type { Product, Storefront } from '@/lib/content-schema';
@@ -40,7 +41,7 @@ export function ProductCatalog({
                 <MediaImage
                   media={product.gallery[0]}
                   priority={i < 3}
-                  sizes="(max-width:700px) 90vw, (max-width:1000px) 45vw, 30vw"
+                  sizes={`${MOBILE_MEDIA_QUERY} 90vw, (max-width:1000px) 45vw, 30vw`}
                 />
                 <span>
                   {content.viewProductLabel} <span aria-hidden="true">⟶</span>

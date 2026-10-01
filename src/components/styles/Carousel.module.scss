@@ -36,7 +36,7 @@
 .dots {
   display: none;
 }
-@media (max-width: 1100px) and (min-width: 701px) {
+@media (max-width: 1100px) and (min-width: $desktop-min-width) {
   .carouselTrack {
     gap: 24px;
   }
@@ -44,7 +44,7 @@
     flex-basis: calc((100% - 48px) / 3);
   }
 }
-@media (max-width: 700px) {
+@media (max-width: $mobile-max-width) {
   .carouselTrack {
     gap: 24px;
     align-items: stretch;

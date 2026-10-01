@@ -1,6 +1,10 @@
 import type { NextConfig } from 'next';
+import { SASS_BREAKPOINTS } from './src/config/breakpoints';
 const cms = new URL(process.env.STRAPI_URL || 'http://127.0.0.1:1337');
 const config: NextConfig = {
+  sassOptions: {
+    additionalData: SASS_BREAKPOINTS,
+  },
   images: {
     remotePatterns: [
       {

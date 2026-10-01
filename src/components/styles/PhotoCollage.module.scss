@@ -115,7 +115,7 @@
     bottom: 0;
   }
 }
-@media (max-width: 1100px) and (min-width: 701px) {
+@media (max-width: 1100px) and (min-width: $desktop-min-width) {
   .heroCollage {
     height: 350px;
     padding-inline: 15px;
