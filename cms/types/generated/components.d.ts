@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContentAssuranceBenefit extends Struct.ComponentSchema {
+  collectionName: 'components_content_assurance_benefits';
+  info: {
+    displayName: 'assurance-benefit';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<['truck', 'shield', 'cart']> & Schema.Attribute.Required;
+    text: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface ContentFaq extends Struct.ComponentSchema {
   collectionName: 'components_content_faqs';
   info: {
@@ -40,6 +51,17 @@ export interface ContentItem extends Struct.ComponentSchema {
   };
 }
 
+export interface ContentPaymentMethod extends Struct.ComponentSchema {
+  collectionName: 'components_content_payment_methods';
+  info: {
+    displayName: 'payment-method';
+  };
+  attributes: {
+    imageUrl: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface ContentPress extends Struct.ComponentSchema {
   collectionName: 'components_content_presss';
   info: {
@@ -49,6 +71,18 @@ export interface ContentPress extends Struct.ComponentSchema {
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     url: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface ContentPurchaseAssurance extends Struct.ComponentSchema {
+  collectionName: 'components_content_purchase_assurances';
+  info: {
+    displayName: 'purchase-assurance';
+  };
+  attributes: {
+    benefits: Schema.Attribute.Component<'content.assurance-benefit', true>;
+    paymentMethods: Schema.Attribute.Component<'content.payment-method', true>;
+    shippingNotice: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -77,10 +111,13 @@ export interface ContentQuote extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export namespace Public {
     export interface ComponentSchemas {
+      'content.assurance-benefit': ContentAssuranceBenefit;
       'content.faq': ContentFaq;
       'content.impact': ContentImpact;
       'content.item': ContentItem;
+      'content.payment-method': ContentPaymentMethod;
       'content.press': ContentPress;
+      'content.purchase-assurance': ContentPurchaseAssurance;
       'content.quote': ContentQuote;
     }
   }

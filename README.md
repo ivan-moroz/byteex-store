@@ -220,7 +220,21 @@ For deployment, provide production environment variables, a persistent PostgreSQ
 
 ## Troubleshooting
 
-The desktop-only shipping/payment assurance strip is configured in **Storefront → purchaseAssurance** (JSON): `shippingNotice`, `paymentMethods` (`name`, `imageUrl`), and `benefits` (`text`, `icon`: `truck`, `shield`, or `cart`). Use `\n` for intentional line breaks. Image URLs can reference bundled `/payments/` assets or your configured Strapi media URLs. Publish changes as usual. The strip is hidden at 700px and below. Existing databases can initialize only this missing field with `node scripts/backfill-purchase-assurance.cjs` from `cms/` after rebuilding/restarting Strapi; existing values and other draft/published content are preserved.
+The shipping/payment assurance strip is configured in **Content Manager → Storefront → purchaseAssurance** using native Strapi fields:
+
+- **shippingNotice**: shipping message (plain text).
+- **paymentMethods**: repeatable entries with **name** (accessible image label) and **imageUrl**. Use the existing bundled `/payments/` paths or an image URL supported by the configured frontend image host. Add, remove, or reorder entries independently.
+- **benefits**: repeatable entries with multiline **text** and an **icon** dropdown (truck, shield, cart). Press Enter for intentional line breaks.
+
+Save the draft, then Publish when ready. Editing these fields does not require a JSON editor. The frontend layout is unchanged; the strip remains hidden at 700px and below.
+
+Edit **purchaseAssurance**, not the migration backup **purchaseAssuranceLegacy**. Migration-only fields use Strapi's attribute-level `visible: false` to exclude them from Content Manager. After updating the schema, restart Strapi and reload the Admin page to refresh its form configuration.
+
+Existing JSON content migrates automatically on the next Strapi startup, before demo seeding. Stop Strapi, back up PostgreSQL, deploy these schema and bootstrap changes together, then rebuild/start the CMS. Draft and published rows are migrated separately in one transaction, preserving their original timestamps and content. The original JSON column remains mapped to the private, hidden `purchaseAssuranceLegacy` field; `purchaseAssuranceMigrated` prevents reruns from restoring deliberately removed content. Neither field is exposed by the REST API or displayed in the editor. Keep both fields while legacy backups are needed. Invalid/unrecognized legacy data aborts the migration instead of being discarded.
+
+For a manual migration check with Strapi stopped, run `node scripts/backfill-purchase-assurance.cjs` from `cms/`. It uses the same idempotent migration and never replaces editor data with seed content. New databases use the usual seed process or the native editor. The frontend requests nested `purchaseAssurance.benefits` and `purchaseAssurance.paymentMethods` through REST populate; no new token permissions are required.
+
+After `pnpm build` in `cms/`, run `node scripts/test-purchase-assurance.cjs` with Strapi stopped to verify migration, separate draft/published values, timestamp preservation, repeat execution, independent field edits, and intentional removal. This integration check requires an existing storefront and rolls back all test writes.
 
 Payment SVGs come from [ActiveMerchant payment_icons](https://github.com/activemerchant/payment_icons) with the license included in `public/payments/MIT-LICENSE`. They are display assets; the project does not implement payment processing.
 

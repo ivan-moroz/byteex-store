@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_content_assurance_benefits",
+  "info": {
+    "displayName": "assurance-benefit"
+  },
+  "attributes": {
+    "text": {
+      "type": "text",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "truck",
+        "shield",
+        "cart"
+      ],
+      "required": true
+    }
+  }
+}

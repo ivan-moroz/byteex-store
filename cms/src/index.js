@@ -1,7 +1,9 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { migratePurchaseAssurance } = require('./migrations/purchase-assurance');
 module.exports = {
   async bootstrap({ strapi }) {
+    await migratePurchaseAssurance(strapi);
     if (process.env.SEED_DEMO !== 'true') return;
     const existingStore = await strapi.documents('api::storefront.storefront').findFirst();
     const source = JSON.parse(
