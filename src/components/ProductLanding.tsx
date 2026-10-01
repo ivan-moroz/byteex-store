@@ -1,3 +1,4 @@
+import { MOBILE_MEDIA_QUERY } from '@/config/breakpoints';
 import type { Product, Storefront } from '@/lib/content-schema';
 import { Header, CallToAction, PhotoCollage, ReviewCard } from './Storefront';
 import { MediaImage } from './MediaImage';
@@ -99,7 +100,7 @@ export function ProductLanding({ product, content }: { product: Product; content
               <MediaImage
                 media={image}
                 key={`${image.url}-${i}`}
-                sizes="(max-width:700px) 33vw, 10vw"
+                sizes={`${MOBILE_MEDIA_QUERY} 33vw, 10vw`}
               />
             ))}
           </div>

@@ -169,6 +169,12 @@ Reorder repeatable components and media using the admin controls. Select an icon
 
 The page layout, breakpoints, CSS, and fixed accessibility/system messages remain code. Editorial text and photos are CMS-managed. No payment, inventory, cart or checkout backend is included: these were not in the supplied frames. The CTA navigates to the catalog.
 
+### Shared mobile breakpoint
+
+Change only `MOBILE_MAX_WIDTH` in `src/config/breakpoints.ts` to adjust the mobile breakpoint. `DESKTOP_MIN_WIDTH` is derived as mobile + 1, preserving the existing inclusive mobile boundary. React imports `MOBILE_MEDIA_QUERY` for responsive image `sizes` (and it can also be used with `matchMedia`). `next.config.ts` passes `SASS_BREAKPOINTS` through `sassOptions.additionalData`, so each SCSS entry can use `$mobile-max-width` and `$desktop-min-width` in media queries without repeating numeric values. Sass emits normal media queries at build time; no browser DOM lookup or generated file is needed.
+
+After changing the value, restart `pnpm dev` or run `pnpm build` to reload the build configuration. New mobile media queries should use these variables, and new JavaScript checks should import the shared constants. The independent content `max-width` in `globals.scss` is a layout dimension and intentionally does not use the mobile breakpoint. `pnpm test` checks Sass/TypeScript agreement immediately below, at, and above the configured boundary.
+
 ## Project structure
 
 ```text

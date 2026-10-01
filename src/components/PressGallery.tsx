@@ -1,5 +1,6 @@
 'use client';
 
+import { MOBILE_MEDIA_QUERY } from '@/config/breakpoints';
 import { useLayoutEffect, useId, useRef, useState } from 'react';
 import type { Storefront } from '@/lib/content-schema';
 import { pressPageSize } from '@/lib/press-pagination';
@@ -59,7 +60,9 @@ export function PressGallery({ items, label }: { items: Storefront['press']; lab
           aria-hidden="true"
         />
         {visibleItems.map((item, index) => {
-          const image = <MediaImage media={item.image} sizes="(max-width:700px) 115px, 18vw" />;
+          const image = (
+            <MediaImage media={item.image} sizes={`${MOBILE_MEDIA_QUERY} 115px, 18vw`} />
+          );
           return item.url ? (
             <a
               className={styles.pressLogo}

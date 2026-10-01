@@ -36,7 +36,7 @@
   width: fit-content;
   max-width: 100%;
 }
-@media (max-width: 700px) {
+@media (max-width: $mobile-max-width) {
   .ctaGroup {
     width: 100%;
   }

@@ -38,7 +38,7 @@
   gap: 30px;
   align-items: center;
 }
-@media (max-width: 700px) {
+@media (max-width: $mobile-max-width) {
   .announcement {
     min-height: 25px;
     padding: 7px 10px;
