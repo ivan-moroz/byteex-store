@@ -2,8 +2,6 @@
 
 A responsive Next.js product catalog and product landing page backed by **Strapi 5 and PostgreSQL**. The product page follows the supplied Byteex desktop/mobile Figma composition. The catalog uses the same typography, navy/cream palette and photography.
 
-**Strapi is the only CMS.** The references to Sanity in the original brief are superseded by the specified Strapi stack. There is no Sanity Studio or Sanity schema configuration in this project.
-
 ## Prerequisites
 
 - Node.js **24 LTS** (tested with 24.19.0).
