@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_content_purchase_assurances",
+  "info": {
+    "displayName": "purchase-assurance"
+  },
+  "attributes": {
+    "shippingNotice": {
+      "type": "string",
+      "required": true
+    },
+    "paymentMethods": {
+      "type": "component",
+      "component": "content.payment-method",
+      "repeatable": true
+    },
+    "benefits": {
+      "type": "component",
+      "component": "content.assurance-benefit",
+      "repeatable": true
+    }
+  }
+}

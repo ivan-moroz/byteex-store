@@ -18,6 +18,16 @@ const comp = (component, repeatable = true) => ({
   required: true,
 });
 const components = {
+  'assurance-benefit': {
+    text: text(),
+    icon: { type: 'enumeration', enum: ['truck', 'shield', 'cart'], required: true },
+  },
+  'payment-method': { name: str(), imageUrl: str() },
+  'purchase-assurance': {
+    shippingNotice: str(),
+    paymentMethods: { ...comp('payment-method'), required: false },
+    benefits: { ...comp('assurance-benefit'), required: false },
+  },
   item: {
     title: str(),
     description: text(false),
@@ -49,7 +59,7 @@ const components = {
 };
 for (const [name, attributes] of Object.entries(components))
   await write(`cms/src/components/content/${name}.json`, {
-    collectionName: `components_content_${name}s`,
+    collectionName: `components_content_${name.replaceAll('-', '_')}s`,
     info: { displayName: name },
     attributes,
   });
@@ -101,7 +111,33 @@ const schemas = {
       finalHeading: str(),
       finalDescription: text(),
       finalMobileDescription: text(),
-      purchaseAssurance: { type: 'json' },
+      purchaseAssurance: {
+        type: 'component',
+        component: 'content.purchase-assurance',
+        repeatable: false,
+      },
+      purchaseAssuranceLegacy: {
+        type: 'json',
+        columnName: 'purchase_assurance',
+        visible: false,
+        private: true,
+        configurable: false,
+        pluginOptions: {
+          'content-manager': { visible: false },
+          'content-type-builder': { visible: false },
+        },
+      },
+      purchaseAssuranceMigrated: {
+        type: 'boolean',
+        default: false,
+        visible: false,
+        private: true,
+        configurable: false,
+        pluginOptions: {
+          'content-manager': { visible: false },
+          'content-type-builder': { visible: false },
+        },
+      },
       heroBenefits: comp('item'),
       heroReview: comp('quote', false),
       press: comp('press'),

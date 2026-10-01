@@ -471,7 +471,28 @@ export interface ApiStorefrontStorefront extends Struct.SingleTypeSchema {
     pressLabel: Schema.Attribute.String & Schema.Attribute.Required;
     processHeading: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
-    purchaseAssurance: Schema.Attribute.JSON;
+    purchaseAssurance: Schema.Attribute.Component<'content.purchase-assurance', false>;
+    purchaseAssuranceLegacy: Schema.Attribute.JSON &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          visible: false;
+        };
+        'content-type-builder': {
+          visible: false;
+        };
+      }>;
+    purchaseAssuranceMigrated: Schema.Attribute.Boolean &
+      Schema.Attribute.Private &
+      Schema.Attribute.SetPluginOptions<{
+        'content-manager': {
+          visible: false;
+        };
+        'content-type-builder': {
+          visible: false;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     reviewLabel: Schema.Attribute.String & Schema.Attribute.Required;
     reviewsDescription: Schema.Attribute.Text & Schema.Attribute.Required;
     reviewsHeading: Schema.Attribute.String & Schema.Attribute.Required;

@@ -19,6 +19,8 @@ const storeQuery = [
     'populate[heroReview][populate][avatar]=true',
     'populate[testimonials][populate][avatar]=true',
     'populate[press][populate][image]=true',
+    'populate[purchaseAssurance][populate][benefits]=true',
+    'populate[purchaseAssurance][populate][paymentMethods]=true',
   ])
   .join('&');
 function normalize(value: unknown): unknown {

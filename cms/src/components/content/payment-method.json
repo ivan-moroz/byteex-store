@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_content_payment_methods",
+  "info": {
+    "displayName": "payment-method"
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "imageUrl": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

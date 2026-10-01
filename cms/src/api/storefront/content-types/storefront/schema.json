@@ -107,7 +107,9 @@
       "required": true
     },
     "purchaseAssurance": {
-      "type": "json"
+      "type": "component",
+      "component": "content.purchase-assurance",
+      "repeatable": false
     },
     "heroBenefits": {
       "type": "component",
@@ -188,6 +190,36 @@
         "images"
       ],
       "required": true
+    },
+    "purchaseAssuranceLegacy": {
+      "type": "json",
+      "columnName": "purchase_assurance",
+      "visible": false,
+      "private": true,
+      "configurable": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
+    },
+    "purchaseAssuranceMigrated": {
+      "type": "boolean",
+      "default": false,
+      "visible": false,
+      "private": true,
+      "configurable": false,
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        },
+        "content-type-builder": {
+          "visible": false
+        }
+      }
     }
   }
 }
